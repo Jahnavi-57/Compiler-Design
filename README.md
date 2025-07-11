@@ -34,8 +34,12 @@ gcc outputfilename.c -ll -o output
 ./output < input.txt
 ```
 ---
-## 🛠️ Basic Lex Programs
+## ✍️ Contributions
+This repository will be updated regularly as we complete each lab exercise. If you are a batchmate and wish to add your solutions or improvements, feel free to fork and create a pull request.
 
+---
+## 📁Folders Information:
+### Basic Lex Files
 The `basic Lex Files /` folder contains:
 
 - Counting digits in a number.
