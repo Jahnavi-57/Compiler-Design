@@ -1,3 +1,4 @@
+#CH.EN.U4CSE22033,M.Jahnavi
 def eliminate_left_recursion(g):
     ng = {}
     for nt, prods in g.items():
@@ -18,15 +19,18 @@ def left_factoring(g):
         changed, ng = False, {}
         for nt, prods in g.items():
             pref = {}
-            for p in prods: pref.setdefault(p[0], []).append(p)
+            for p in prods: 
+                pref.setdefault(p[0], []).append(p)
             if any(len(v) > 1 for v in pref.values()):
-                changed = True; ntp = nt + "'"; ng[nt] = []
+                changed = True; ntp = nt + "1"; ng[nt] = []
                 for k, v in pref.items():
                     if len(v) > 1:
                         ng[nt].append([k, ntp])
                         ng[ntp] = [p[1:] or ["ε"] for p in v]
-                    else: ng[nt].append(v[0])
-            else: ng[nt] = prods
+                    else:
+                        ng[nt].append(v[0])
+            else: 
+                ng[nt] = prods
         g = ng
     return g
 
@@ -34,12 +38,10 @@ def show(g):
     for nt, p in g.items():
         print(nt, "->", " | ".join(" ".join(x) for x in p))
 
-# Example
 grammar = {
-    "E": [["E", "+", "T"], ["T"]],
-    "T": [["T", "*", "F"], ["F"]],
-    "F": [["(", "E", ")"], ["id"]]
+    "S": [["S", "a"], ["S", "b"], ["c", "d"], ["c", "e"]]
 }
+
 
 print("Original:"); show(grammar)
 grammar = eliminate_left_recursion(grammar)

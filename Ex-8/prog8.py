@@ -1,6 +1,4 @@
-# Simple Target Code Generator in Python
-
-# Read filename of intermediate code
+#M.Jahnavi, CH.EN.U4CSE22033
 fname = input("Enter filename of the intermediate code (e.g., input.txt): ")
 
 try:

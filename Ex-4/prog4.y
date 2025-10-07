@@ -1,3 +1,4 @@
+/*M.Jahnavi, CH.EN.U4CSE22033*/
 %{
   int yylex();
   #define YYSTYPE double
@@ -29,7 +30,7 @@ expr:
 yylex(){
   int c;
   while((c=getchar())==' ');
-  if(((c==' ')||(isdigit(c)))){
+  if(((c=='.')||(isdigit(c)))){
     ungetc(c,stdin);
     scanf("%lf",&yylval);
     return NUMBER;

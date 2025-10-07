@@ -1,5 +1,6 @@
+#M.Jahnavi, CH.EN.U4CSE22033
 expr=input("Enter Expression:\n")
-ops=['+','-','*','/']
+ops=['/','*','+','-']
 tmp=ord('Z')
 print("Intermediate Code:")
 for op in ops:
